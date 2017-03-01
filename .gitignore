@@ -1,0 +1,43 @@
+#############
+## Windows detritus
+#############
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Mac crap
+.DS_Store
+
+
+# For PCBs designed using KiCad: http://www.kicad-pcb.org/
+
+# Temporary files
+*.000
+*.bak
+*.bck
+*.kicad_pcb-bak
+*~
+_autosave-*
+*.tmp
+
+# Netlist files (exported from Eeschema)
+*.net
+
+# Autorouter files (exported from Pcbnew)
+*.dsn
+*.ses
+
+# Exported BOM files
+*.xml
+*.csv
+
+
+
+#############
