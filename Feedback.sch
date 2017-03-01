@@ -100,4 +100,6 @@ Wire Wire Line
 	4950 2950 4950 4600
 Wire Wire Line
 	4950 4600 4600 4600
+Text Notes 7450 4400 3    60   ~ 0
+Voltage Reference 5V\n
 $EndSCHEMATC
