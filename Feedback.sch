@@ -29,6 +29,7 @@ LIBS:atmel
 LIBS:contrib
 LIBS:valves
 LIBS:Buck Supply-cache
+LIBS:ir
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
@@ -43,7 +44,7 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text HLabel 6900 2800 2    60   Input ~ 0
+Text HLabel 8900 2500 2    60   Input ~ 0
 Vsample
 Text HLabel 2000 2700 0    60   Input ~ 0
 DutyCycle
@@ -91,48 +92,12 @@ S 4000 4400 600  500
 U 58B66019
 F0 "Vramp" 60
 F1 "Vramp.sch" 60
-F2 "Vcc" I L 4000 4500 60 
-F3 "GND" I L 4000 4750 60 
-F4 "Vramp" I R 4600 4600 60 
+F2 "Vramp" I R 4600 4600 60 
 $EndSheet
-$Comp
-L GND #PWR?
-U 1 1 58B66F61
-P 3750 4950
-F 0 "#PWR?" H 3750 4700 50  0001 C CNN
-F 1 "GND" H 3750 4800 50  0000 C CNN
-F 2 "" H 3750 4950 50  0000 C CNN
-F 3 "" H 3750 4950 50  0000 C CNN
-	1    3750 4950
-	1    0    0    -1  
-$EndComp
-$Comp
-L VCC #PWR?
-U 1 1 58B66F95
-P 3750 4350
-F 0 "#PWR?" H 3750 4200 50  0001 C CNN
-F 1 "VCC" H 3750 4500 50  0000 C CNN
-F 2 "" H 3750 4350 50  0000 C CNN
-F 3 "" H 3750 4350 50  0000 C CNN
-	1    3750 4350
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4000 4500 3750 4500
-Wire Wire Line
-	3750 4500 3750 4350
-Wire Wire Line
-	3750 4950 3750 4750
-Wire Wire Line
-	3750 4750 4000 4750
 Wire Wire Line
 	4000 2950 4950 2950
 Wire Wire Line
 	4950 2950 4950 4600
 Wire Wire Line
 	4950 4600 4600 4600
-Text HLabel 6900 3200 2    60   Input ~ 0
-GND
-Text HLabel 6900 2350 2    60   Input ~ 0
-VCC
 $EndSCHEMATC

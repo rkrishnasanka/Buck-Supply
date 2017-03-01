@@ -29,6 +29,7 @@ LIBS:atmel
 LIBS:contrib
 LIBS:valves
 LIBS:Buck Supply-cache
+LIBS:ir
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
@@ -43,10 +44,220 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text HLabel 4300 3350 0    60   Input ~ 0
+Text HLabel 2350 3350 0    60   Input ~ 0
 DutyCycle
-Text HLabel 7400 3400 2    60   Input ~ 0
+Text HLabel 9500 3200 2    60   Input ~ 0
 Vout
-Text HLabel 7400 3900 2    60   Input ~ 0
-GND
+Text HLabel 1100 2650 0    60   Input ~ 0
+Vin
+$Comp
+L IRS2004 U?
+U 1 1 58B71DF7
+P 3300 3400
+F 0 "U?" H 3300 3050 60  0000 C CNN
+F 1 "IRS2004" H 3300 3750 60  0000 C CNN
+F 2 "" H 3350 3350 60  0000 C CNN
+F 3 "" H 3350 3350 60  0000 C CNN
+	1    3300 3400
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R?
+U 1 1 58B71E51
+P 1250 3050
+F 0 "R?" V 1330 3050 50  0000 C CNN
+F 1 "1K" V 1250 3050 50  0000 C CNN
+F 2 "" V 1180 3050 50  0000 C CNN
+F 3 "" H 1250 3050 50  0000 C CNN
+	1    1250 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 58B71E95
+P 1600 3850
+F 0 "#PWR?" H 1600 3600 50  0001 C CNN
+F 1 "GND" H 1600 3700 50  0000 C CNN
+F 2 "" H 1600 3850 50  0000 C CNN
+F 3 "" H 1600 3850 50  0000 C CNN
+	1    1600 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C?
+U 1 1 58B71F54
+P 1600 3050
+F 0 "C?" H 1625 3150 50  0000 L CNN
+F 1 "100nF" H 1625 2950 50  0000 L CNN
+F 2 "" H 1638 2900 50  0000 C CNN
+F 3 "" H 1600 3050 50  0000 C CNN
+	1    1600 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L D_Small D?
+U 1 1 58B720C2
+P 3250 2650
+F 0 "D?" H 3200 2730 50  0000 L CNN
+F 1 "D" H 3100 2570 50  0000 L CNN
+F 2 "" V 3250 2650 50  0000 C CNN
+F 3 "" V 3250 2650 50  0000 C CNN
+	1    3250 2650
+	-1   0    0    1   
+$EndComp
+$Comp
+L C C?
+U 1 1 58B724B3
+P 4800 3350
+F 0 "C?" H 4825 3450 50  0000 L CNN
+F 1 "Bootstrap" H 4825 3250 50  0000 L CNN
+F 2 "" H 4838 3200 50  0000 C CNN
+F 3 "" H 4800 3350 50  0000 C CNN
+	1    4800 3350
+	1    0    0    -1  
+$EndComp
+Text Label 3950 3350 0    60   ~ 0
+High_Drive
+Text Label 3950 3650 0    60   ~ 0
+Low_Drive
+$Comp
+L Q_NMOS_GDS Q?
+U 1 1 58B72E81
+P 6600 2900
+F 0 "Q?" H 6900 2950 50  0000 R CNN
+F 1 "Q_NMOS_GDS" H 7250 2850 50  0000 R CNN
+F 2 "" H 6800 3000 50  0000 C CNN
+F 3 "" H 6600 2900 50  0000 C CNN
+	1    6600 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Q_NMOS_GDS Q?
+U 1 1 58B72EC6
+P 6600 3750
+F 0 "Q?" H 6900 3800 50  0000 R CNN
+F 1 "Q_NMOS_GDS" H 7250 3700 50  0000 R CNN
+F 2 "" H 6800 3850 50  0000 C CNN
+F 3 "" H 6600 3750 50  0000 C CNN
+	1    6600 3750
+	1    0    0    -1  
+$EndComp
+Text Label 1950 2650 0    60   ~ 0
+vin
+Wire Wire Line
+	2350 3350 2850 3350
+Wire Wire Line
+	1100 2650 3150 2650
+Wire Wire Line
+	1250 2650 1250 2900
+Wire Wire Line
+	1250 3200 1250 3500
+Wire Wire Line
+	1250 3500 2850 3500
+Wire Wire Line
+	1600 2650 1600 2900
+Connection ~ 1250 2650
+Wire Wire Line
+	2850 3650 1600 3650
+Wire Wire Line
+	1600 3200 1600 3850
+Connection ~ 1600 3650
+Connection ~ 1600 2650
+Wire Wire Line
+	2850 3200 2450 3200
+Wire Wire Line
+	2450 3200 2450 2650
+Connection ~ 2450 2650
+Wire Wire Line
+	3750 3500 4800 3500
+Wire Wire Line
+	3750 3200 4800 3200
+Wire Wire Line
+	3350 2650 4350 2650
+Wire Wire Line
+	4350 2650 4350 3200
+Connection ~ 4350 3200
+Wire Wire Line
+	3750 3350 3950 3350
+Wire Wire Line
+	3750 3650 3950 3650
+Wire Wire Line
+	6700 3100 6700 3550
+Wire Wire Line
+	6700 3350 6300 3350
+Connection ~ 6700 3350
+Text Label 4300 3500 0    60   ~ 0
+vs
+Text Label 6300 3350 0    60   ~ 0
+vs
+Wire Wire Line
+	6400 2900 6000 2900
+Wire Wire Line
+	6400 3750 6000 3750
+Text Label 6000 2900 0    60   ~ 0
+High_Drive
+Text Label 6000 3750 0    60   ~ 0
+Low_Drive
+$Comp
+L GND #PWR?
+U 1 1 58B7404F
+P 6700 4300
+F 0 "#PWR?" H 6700 4050 50  0001 C CNN
+F 1 "GND" H 6700 4150 50  0000 C CNN
+F 2 "" H 6700 4300 50  0000 C CNN
+F 3 "" H 6700 4300 50  0000 C CNN
+	1    6700 4300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6700 3950 6700 4300
+Wire Wire Line
+	6700 2700 6700 1900
+Wire Wire Line
+	6700 1900 6350 1900
+Text Label 6350 1900 0    60   ~ 0
+vin
+$Comp
+L INDUCTOR L?
+U 1 1 58B74E09
+P 7900 3200
+F 0 "L?" V 7850 3200 50  0000 C CNN
+F 1 "INDUCTOR" V 8000 3200 50  0000 C CNN
+F 2 "" H 7900 3200 50  0000 C CNN
+F 3 "" H 7900 3200 50  0000 C CNN
+	1    7900 3200
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	9500 3200 8200 3200
+Wire Wire Line
+	7600 3200 6700 3200
+Connection ~ 6700 3200
+$Comp
+L CP1 C?
+U 1 1 58B74ED9
+P 8900 3450
+F 0 "C?" H 8925 3550 50  0000 L CNN
+F 1 "CP1" H 8925 3350 50  0000 L CNN
+F 2 "" H 8900 3450 50  0000 C CNN
+F 3 "" H 8900 3450 50  0000 C CNN
+	1    8900 3450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8900 3300 8900 3200
+Connection ~ 8900 3200
+$Comp
+L GND #PWR?
+U 1 1 58B75099
+P 8900 3800
+F 0 "#PWR?" H 8900 3550 50  0001 C CNN
+F 1 "GND" H 8900 3650 50  0000 C CNN
+F 2 "" H 8900 3800 50  0000 C CNN
+F 3 "" H 8900 3800 50  0000 C CNN
+	1    8900 3800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8900 3600 8900 3800
 $EndSCHEMATC
