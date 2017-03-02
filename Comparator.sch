@@ -46,8 +46,19 @@ Comment4 ""
 $EndDescr
 Text HLabel 2500 2500 0    60   Input ~ 0
 Vg
-Text HLabel 5700 2500 2    60   Input ~ 0
+Text HLabel 7950 2300 2    60   Input ~ 0
 Verror
-Text HLabel 5700 2950 2    60   Input ~ 0
+Text HLabel 7950 2750 2    60   Input ~ 0
 Vramp
+$Comp
+L TL081 U?
+U 1 1 58B85DF2
+P 6300 2550
+F 0 "U?" H 6300 2800 50  0000 L CNN
+F 1 "TL081" H 6300 2700 50  0000 L CNN
+F 2 "" H 6350 2750 50  0000 C CNN
+F 3 "" H 6300 2800 50  0000 C CNN
+	1    6300 2550
+	-1   0    0    -1  
+$EndComp
 $EndSCHEMATC
